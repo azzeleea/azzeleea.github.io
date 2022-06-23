@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="widht=device-width" initial-scale="1.0"/>
+        <title>Tugas JS-API 1</title>        
+    </head>
+    <body> 
+        <h1>Get a FizzBuzz Result!</h1>
+        <form>
+            <label for="number">Type a number :</label>
+            <input type="text" id="number">
+            <button type="button" onclick="check()">Click here!</button>
+        </form>
+    <br>
+        <p id="result"></p>
+    
+        <script>
+            function check()    {
+                var number = document.getElementById("number").value ;
+                var result = "";
+
+                if (number == 0){
+                    result = "Invalid Input";
+                }
+                else if (number % 3 == 0 && number % 5 == 0 ){
+                    result = " FizzBuzz!"
+                }
+                else if (number % 3 == 0){
+                    result = " Fizz!"
+                }
+                else if (number % 5 == 0){
+                    result = " Buzz!"
+                }
+                else {
+                    result = number;
+                }
+
+                document.getElementById("result").innerHTML = result;
+            }
+        </script>
+    </body>
+</html>
