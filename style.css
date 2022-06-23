@@ -1,0 +1,32 @@
+.container {
+    display: grid;
+    text-align: center;
+    padding: 20px;
+    margin: 10px;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.grass {
+    background-color: #20D628;
+  }
+.fire {
+    background-color: #FF5733;
+  }
+.water {
+    background-color: #3390FF;
+  }
+.normal {
+    background-color: #C2D5D9;
+  }
+.bug {
+    background-color: #D63852;
+  }
+.poison {
+    background-color: #CCDB5C;
+  }
+.electric {
+    background-color: #8426CD;
+  }
+  .ground {
+    background-color: #5E320B;
+ }
