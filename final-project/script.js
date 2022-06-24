@@ -1,4 +1,4 @@
-const quoteText = document.querySelector(".quote"),
+const Text = document.querySelector(".quote"),
 quoteBtn = document.querySelector("button"),
 authorName = document.querySelector(".name"),
 speechBtn = document.querySelector(".speech"),
@@ -8,7 +8,7 @@ function randomQuote(){
     quoteBtn.classList.add("loading");
     quoteBtn.innerText = "Loading Quote...";
     fetch("https://type.fit/api/quotes").then(response => response.json()).then(result => {
-        quoteText.innerText = result.content;
+        Text.innerText = result.content;
         authorName.innerText = result.author;
         quoteBtn.classList.remove("loading");
         quoteBtn.innerText = "Get Another Quote";
@@ -16,7 +16,7 @@ function randomQuote(){
 }
 speechBtn.addEventListener("click", ()=>{
     if(!quoteBtn.classList.contains("loading")){
-        let utterance = new SpeechSynthesisUtterance(`${quoteText.innerText} by ${authorName.innerText}`);
+        let utterance = new SpeechSynthesisUtterance(`${Text.innerText} by ${authorName.innerText}`);
         synth.speak(utterance);
         setInterval(()=>{
             !synth.speaking ? speechBtn.classList.remove("active") : speechBtn.classList.add("active");
@@ -24,6 +24,6 @@ speechBtn.addEventListener("click", ()=>{
     }
 });
 copyBtn.addEventListener("click", ()=>{
-    navigator.clipboard.writeText(quoteText.innerText);
+    navigator.clipboard.writeText(Text.innerText);
 });
 quoteBtn.addEventListener("click", randomQuote);
